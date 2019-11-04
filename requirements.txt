@@ -1,0 +1,7 @@
+flask
+requests
+pyopenssl
+ndg-httpsclient
+pyasn1
+pyaml
+./webexteamssdk
