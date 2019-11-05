@@ -10,27 +10,21 @@ from flask import Flask, request
 from webexteamssdk import WebexTeamsAPI, Webhook
 
 # local imports ----------------------------------------------------------------
-from helpers import (read_yaml_data,
-                     get_ngrok_url,
-                     find_webhook_by_name,
-                     delete_webhook, create_webhook)
+from utilities import get_ngrok_url, find_webhook_by_name, delete_webhook, create_webhook
 
 flask_app = Flask(__name__)
 teams_api = None
 
-# Create a python decorator which tells Flask to execute this method when the "/teamswebhook" uri is hit
-# and the HTTP method is a "POST" request. 
+# Use a python decorator which tells Flask to execute this method when the "/teamswebhook" endpoint
+# is hit and the HTTP method is a "POST" request. 
 @flask_app.route('/teamswebhook', methods=['POST'])
 def teamswebhook():
 
-    # Only execute this section of code when a POST request is sent, as a POST indicates when a message
-    # has been sent and therefore needs processing.
+    # Only execute this section of code when a POST request is sent, as a POST indicates when a
+    # message has been sent and therefore needs processing.
     if request.method == 'POST':
         json_data = request.json
-        print("\n")
-        print("WEBHOOK POST RECEIVED:")
-        print(json_data)
-        print("\n")
+        print(f"\nWEBHOOK POST RECEIVED: {json_data}\n")
 
         # Pass the JSON data so that it can get parsed by the Webhook class
         webhook_obj = Webhook(json_data)
@@ -58,10 +52,7 @@ def teamswebhook():
 
 
 if __name__ == '__main__':
-
-    # Read the configuration that contains the bot access token
-    config = read_yaml_data(os.getcwd() + '\config\config.yaml')['hello_bot']
-    teams_api = WebexTeamsAPI(access_token=config['teams_access_token'])
+    teams_api = WebexTeamsAPI(access_token='')
 
     # Get some required NGrok information
     ngrok_url = get_ngrok_url()
