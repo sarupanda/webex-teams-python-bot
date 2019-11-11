@@ -1,68 +1,55 @@
 #!/usr/bin/env python
 
 import json
-
+import requests
 from flask import Flask, request
 from webexteamssdk import WebexTeamsAPI, Webhook
-import requests
 
+WEBEX_TEAMS_ACCESS_TOKEN = '<my-bot-access-token>'
 flask_app = Flask(__name__)
 teams_api = None
 
+def create_webhook(name):
+    delete_webhook(name)
+    teams_api.webhooks.create(
+        name=name, targetUrl=get_ngrok_url()+'/teamswebhook',
+        resource='messages', event='created', filter=None)
+
+def delete_webhook(name):
+    for hook in teams_api.webhooks.list():
+        if hook.name == webhook_name:
+            teams_api.webhooks.delete(hook.id)
+
 def get_ngrok_url(addr='127.0.0.1', port=4040):
-    """Queries ngrok JSON API and returns public URL if ngrok is running"""
     try:
         ngrokpage = requests.get("http://{}:{}/api/tunnels".format(addr, port), headers="").text
     except:
         raise RuntimeError('Not able to connect to ngrok API')
     ngrok_info = json.loads(ngrokpage)
-    url = ngrok_info['tunnels'][0]['public_url']
-    return url
+    return ngrok_info['tunnels'][0]['public_url']
+
+def process_message(data):
+    person = teams_api.people.get(data.personId)
+    room = teams_api.rooms.get(data.roomId)
+    message = teams_api.messages.get(data.id)
+    email = person.emails[0]
+
+    me = teams_api.people.me()
+    if message.personId == me.id:
+        return ''
+    else:
+        teams_api.messages.create(room.id, text='Hello, person who has email '+str(email))
+        return '200'
 
 @flask_app.route('/teamswebhook', methods=['POST'])
 def teamswebhook():
-    """/teamswebhook endpoint, takes POST requests"""
-
     if request.method == 'POST':
-        json_data = request.json
-        webhook_obj = Webhook(json_data)
-
-        # Obtain room, message, person and email info using the Teams API
-        room = teams_api.rooms.get(webhook_obj.data.roomId)
-        message = teams_api.messages.get(webhook_obj.data.id)
-        person = teams_api.people.get(message.personId)
-        email = person.emails[0]
-
-        # Message was sent by the bot, do not respond.
-        me = teams_api.people.me()
-        if message.personId == me.id:
-            return 'Ignore'
-        else:
-            teams_api.messages.create(room.id, text='Hello, person who has email '+str(email))
-            return 'OK'
-
+        webhook_obj = Webhook(request.json)
+        return process_message(webhook_obj.data)
 
 if __name__ == '__main__':
-    teams_api = WebexTeamsAPI(access_token='')
+    teams_api = WebexTeamsAPI(access_token=WEBEX_TEAMS_ACCESS_TOKEN)
+    webhook_name = 'bot-webhook'
 
-    # Automatically grab ngrok URL
-    ngrok_url = get_ngrok_url()
-
-    # Delete existing webhook if it exists
-    webhook_name = 'hello-bot-webhook'
-    dev_webhook = None
-    webhooks = teams_api.webhooks.list()
-    for hook in webhooks:
-        if hook.name == webhook_name:
-            dev_webhook = hook
-    if dev_webhook:
-        teams_api.webhooks.delete(dev_webhook.id)
-
-    # Create new webhook
-    teams_api.webhooks.create(
-        name=webhook_name, targetUrl=ngrok_url + '/teamswebhook', resource='messages',
-        event='created', filter=None
-    )
-
-    # Host flask server on port 5000
+    create_webhook(webhook_name)
     flask_app.run(host='0.0.0.0', port=5000)
