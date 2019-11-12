@@ -1,9 +1,7 @@
-#!/usr/bin/env python
-
 import json
 from flask import Flask, request
-from webexteamssdk import WebexTeamsAPI, Webhook
 from utils import create_webhook
+from webexteamssdk import WebexTeamsAPI, Webhook
 
 WEBEX_TEAMS_ACCESS_TOKEN = '<my-bot-access-token>'
 teams_api = None

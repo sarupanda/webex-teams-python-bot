@@ -2,13 +2,6 @@
 
 A Cisco Webex Teams bot is an automated user within the Webex Teams platform that can be interacted with, enhancing the user experience within an organisation. The following instructions will guide you through the steps required to create and run your own Cisco Webex Teams Bot.
 
-## Table of Contents
-1. [Prerequisites](#prerequisites)
-2. [Setup Bot](#setup)
-3. [Run Bot](#run)
-5. [Resources](#resources)
-
-<a name="prerequisites"></a>
 ## Prerequisites
 
 #### Create a Cisco Webex Teams account
@@ -27,7 +20,6 @@ Go to the [Cisco Webex](https://www.webex.com/) website and select **Teams** in 
 
 "Ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels." [Link to download ngrok](https://ngrok.com/download).
 
-<a name="setup"></a>
 ## Setup Bot
 
 #### 1. Create a Bot
@@ -57,10 +49,9 @@ To go to the directory you have just cloned simply run `cd webex-teams-python-bo
 After installing Python, open terminal and run the following command to install dependencies.
 
 ```sh
-pip3 install -r requirements.txt
+pip3 install flask requests webexteamssdk
 ```
 
-<a name="run"></a>
 ## Run Bot
 
 #### 1. Run Ngrok
@@ -82,14 +73,13 @@ Replace `<my-bot-access-token>` on Line 8 with the Access Token you saved during
 On the terminal window, run the following to get your bot working.
 
 ```sh
-python3 bot.py
+python3 hello_bot.py
 ```
 
 #### 4. Interact with your Bot
 
 Login to your [Webex Teams](https://teams.webex.com/) account and **Contact a person** by clicking the **+** button. Then, enter your Bot Username (something like **XXXX@webex.bot**) and send a random message within the chat.
 
-<a name="resources"></a>
 ## Resources
 
 * [Cisco Webex for Developers](https://developer.webex.com/docs/platform-introduction): Platform documentation
