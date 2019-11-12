@@ -21,11 +21,11 @@ Go to the [Cisco Webex](https://www.webex.com/) website and select **Teams** in 
 
 #### Install Python
 
-"Python is an interpreted, high-level, general-purpose programming language" [Link to install python](https://www.python.org/downloads/).
+"Python is an interpreted, high-level, general-purpose programming language" [Link to install latest python version](https://www.python.org/downloads/).
 
-#### Install Ngrok
+#### Download Ngrok
 
-"Ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels." [Link to install ngrok](https://ngrok.com/download).
+"Ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels." [Link to download ngrok](https://ngrok.com/download).
 
 <a name="setup"></a>
 ## Setup Bot
@@ -52,9 +52,9 @@ Clone the git repository to your local machine by running the following command 
 git clone https://github.com/sarupanda/webexteams-python-example.git
 ```
 
-To go to directory you have just cloned simply run `cd webexteams-python-example`. Try running `ls` and check that you can see all the files you will need to get your Bot up and running.
+To go to the directory you have just cloned simply run `cd webexteams-python-example`. Try running `ls` and check that you can see all the files you will need to get your Bot up and running.
 
-After installing Python, open terminal and run the following commands to install dependencies.
+After installing Python, open terminal and run the following command to install dependencies.
 
 ```sh
 pip3 install -r requirements.txt
@@ -65,7 +65,7 @@ pip3 install -r requirements.txt
 
 #### 1. Run Ngrok
 
-Copy the ngrok executable file that you downloaded above to the `webexteams-python-example` folder. On a terminal window, go to this directory and run the following command to expose a web server on port 5000 of your local machine to the internet.
+Unzip the ngrok file that you downloaded above and copy the executable file to the `webexteams-python-example` folder. On a terminal window, go to this directory and run the following command to expose a web server on port 5000 of your local machine to the internet.
 
 ```sh
 ./ngrok http 5000
@@ -73,9 +73,9 @@ Copy the ngrok executable file that you downloaded above to the `webexteams-pyth
 
 #### 2. Configure Access Token
 
-Open `bot.py` with your favourite text editor. If you still do not have one, take a quick look at [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/) or (in case you are a very brave developer) [Vim](https://www.vim.org).
+Open `hello_bot.py` with your favourite text editor. If you still do not have one, take a quick look at [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/) or (in case you are a very brave developer) [Vim](https://www.vim.org).
 
-Replace `<my-bot-access-token>` with the Access Token you saved during the **Create a Bot** step.
+Replace `<my-bot-access-token>` on Line 8 with the Access Token you saved during the **Create a Bot** step.
 
 #### 3. Run Bot
 
