@@ -49,10 +49,10 @@ Open a terminal and you can start working on your home directory (`/Users/<usern
 Clone the git repository to your local machine by running the following command on your terminal.
 
 ```sh
-git clone https://github.com/sarupanda/webexteams-python-example.git
+git clone https://github.com/sarupanda/webex-teams-python-bot.git
 ```
 
-To go to the directory you have just cloned simply run `cd webexteams-python-example`. Try running `ls` and check that you can see all the files you will need to get your Bot up and running.
+To go to the directory you have just cloned simply run `cd webex-teams-python-bot`. Try running `ls` and check that you can see all the files you will need to get your Bot up and running.
 
 After installing Python, open terminal and run the following command to install dependencies.
 
@@ -65,7 +65,7 @@ pip3 install -r requirements.txt
 
 #### 1. Run Ngrok
 
-Unzip the ngrok file that you downloaded above and copy the executable file to the `webexteams-python-example` folder. On a terminal window, go to this directory and run the following command to expose a web server on port 5000 of your local machine to the internet.
+Unzip the ngrok file that you downloaded above and copy the executable file to the `webex-teams-python-bot` folder. On a terminal window, go to this directory and run the following command to expose a web server on port 5000 of your local machine to the internet.
 
 ```sh
 ./ngrok http 5000
