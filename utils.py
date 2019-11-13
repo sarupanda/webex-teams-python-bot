@@ -1,11 +1,11 @@
 import json
 import requests
 
-def create_webhook(teams_api, name):
+def create_webhook(teams_api, name, webhook, resource):
     delete_webhook(teams_api, name)
     teams_api.webhooks.create(
-        name=name, targetUrl=get_ngrok_url()+'/teamswebhook',
-        resource='messages', event='created', filter=None)
+        name=name, targetUrl=get_ngrok_url()+webhook,
+        resource=resource, event='created', filter=None)
 
 def delete_webhook(teams_api, name):
     for hook in teams_api.webhooks.list():
