@@ -4,9 +4,19 @@ A Cisco Webex Teams bot is an automated user within the Webex Teams platform tha
 
 ## Prerequisites
 
-#### Create a Cisco Webex Teams account
+#### Create a Webex account
 
-Go to the [Cisco Webex](https://www.webex.com/) website and select **Teams** in the **Sign in** drop down menu on the top right corner. Fill in your details and follow the instructions to create an account.
+Go to [Cisco Webex for Developers](https://developer.webex.com/) and click **Sign up** on the top right corner. Fill in your details and follow the instructions to create an account.
+
+#### Create a Webex Bot
+
+Go back to [Cisco Webex for Developers](https://developer.webex.com/) and log in with your account details.
+
+Click **Documentation** on the top bar and select the **Bots** section on the left. On this [Bots Documentation](https://developer.webex.com/docs/bots) webpage you will find an extended explanation on what are Bots and how to create them.
+
+To proceed, click on the **Create a Bot** button and fill up all the required information to describe your new Bot. Finally, scroll down and click on the **Add Bot** button.
+
+Now that your Bot has been created, save the **Access Token** since you will need it later.
 
 #### Install Git
 
@@ -22,21 +32,11 @@ Go to the [Cisco Webex](https://www.webex.com/) website and select **Teams** in 
 
 ## Setup Bot
 
-#### 1. Create a Bot
-
-Go to [Cisco Webex for Developers](https://developer.webex.com/) and log in with your **Cisco Webex Teams** account details.
-
-Click **Documentation** on the top bar and select the **Bots** section on the left. On this [Bots Documentation](https://developer.webex.com/docs/bots) webpage you will find an extended explanation on what are Bots and how to create them.
-
-To proceed, click on the **Create a Bot** button and fill up all the required information to describe your new Bot. Finally, scroll down and click on the **Add Bot** button. Your Bot has now been created.
-
-Click on **Regenerate Access Token** and save it since you will need it later.
-
-#### 2. Open Terminal and Define Working Directory
+#### 1. Open Terminal and Define Working Directory
 
 Open a terminal and you can start working on your home directory (`/Users/<username>` for macOS, `<root>\Users\<username>` for Windows or `/home/<username>` for Linux). Otherwise, you can navigate to another directory using `cd <other-directory>`.
 
-#### 3. Clone git Repository and Install Dependencies
+#### 2. Clone git Repository and Install Dependencies
 
 Clone the git repository to your local machine by running the following command on your terminal.
 
