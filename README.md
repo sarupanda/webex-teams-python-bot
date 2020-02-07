@@ -41,7 +41,7 @@ Open a terminal and you can start working on your home directory (`/Users/<usern
 Clone the git repository to your local machine by running the following command on your terminal.
 
 ```sh
-git clone https://github.com/sarupanda/webex-teams-python-bot.git
+git clone https://github.com/sarupanda/webex-teams-python-bot.git --recursive
 ```
 
 To go to the directory you have just cloned simply run `cd webex-teams-python-bot`. Try running `ls` and check that you can see all the files you will need to get your Bot up and running.
@@ -49,7 +49,7 @@ To go to the directory you have just cloned simply run `cd webex-teams-python-bo
 After installing Python, open terminal and run the following command to install dependencies.
 
 ```sh
-pip3 install flask requests webexteamssdk
+pip3 install flask requests ./webexteamssdk
 ```
 
 ## Run Bot
@@ -84,5 +84,6 @@ Login to your [Webex Teams](https://teams.webex.com/) account and **Contact a pe
 
 * [Cisco Webex for Developers](https://developer.webex.com/docs/platform-introduction): Platform documentation
 * [Webex Teams APIs](https://webexteamssdk.readthedocs.io/): Webex Teams SDK documentation
+* [Adaptive Cards Spec](https://adaptivecards.io/explorer/): Schema Explorer for Adaptive Cards and interactive online demo
 * [Cisco Webex Teams App Hub](https://apphub.webex.com/categories): Get some inspiration to develop your own bot from this list of Cisco Webex Teams Bot examples
 * [RapidAPI](https://rapidapi.com/): The world's largest API directory
