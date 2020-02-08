@@ -78,12 +78,15 @@ python3 hello_bot.py
 
 #### 4. Interact with your Bot
 
-Login to your [Webex Teams](https://teams.webex.com/) account and **Contact a person** by clicking the **+** button. Then, enter your Bot Username (something like **XXXX@webex.bot**) and send a random message within the chat.
+Login to your [Webex Teams](https://teams.webex.com/) account and **Create a Space** by clicking the **+** button. Then, enter your Bot Username (something like **XXXX@webex.bot**) as well as your own email address. The bot has four commands: `create poll`, `add option`, `start poll` and `end poll`. To invoke one of those commands, type `@<bot_name>`, a space, and then the command.
+
+For example, if your bot was named John, to create a poll, you would type `@John create poll` and send that into the space.
 
 ## Resources
 
 * [Cisco Webex for Developers](https://developer.webex.com/docs/platform-introduction): Platform documentation
 * [Webex Teams APIs](https://webexteamssdk.readthedocs.io/): Webex Teams SDK documentation
+* [Webex Cards Guide](https://developer.webex.com/docs/api/guides/cards): Webex Teams SDK documentation for sending Adaptive Cards
 * [Adaptive Cards Spec](https://adaptivecards.io/explorer/): Schema Explorer for Adaptive Cards and interactive online demo
 * [Cisco Webex Teams App Hub](https://apphub.webex.com/categories): Get some inspiration to develop your own bot from this list of Cisco Webex Teams Bot examples
 * [RapidAPI](https://rapidapi.com/): The world's largest API directory

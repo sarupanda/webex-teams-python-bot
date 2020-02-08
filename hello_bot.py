@@ -23,7 +23,7 @@ def process_message(data):
     else:
         message = teams_api.messages.get(data.id).text
         print(message)
-        commands_split = (message.split())[1:]  # note: might be easier to concatenate this
+        commands_split = (message.split())[1:]
         command = ' '.join(commands_split)
         parse_message(command, data.personEmail, data.roomId)
         return '200'
