@@ -32,11 +32,9 @@ def parse_message(command, sender, roomId):
     if command == "create poll":
         if roomId not in list(all_polls.keys()):
             create_poll(roomId, sender)
-            send_message_in_room(roomId, "Check your 1:1 messages for a poll card, " + teams_api.people.get(sender).firstName)
     elif command == "add option":
         if all_polls[roomId]:
             add_option(roomId, sender)
-            send_message_in_room(roomId, "Check your 1:1 messages for a poll card, " + teams_api.people.get(sender).firstName)
     elif command == "start poll":
         if all_polls[roomId]:
             start_poll(roomId, sender)
