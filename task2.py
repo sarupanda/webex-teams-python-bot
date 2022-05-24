@@ -1,7 +1,7 @@
 import json
-from poll import Poll
+from common.poll import Poll
 from flask import Flask, request
-from utils import create_webhook
+from common.utils import create_webhook
 from webexteamssdk import WebexTeamsAPI, Webhook
 
 WEBEX_TEAMS_ACCESS_TOKEN = '<bot-access-token>'
