@@ -66,7 +66,7 @@ Unzip the ngrok file that you downloaded above and copy the executable file to t
 
 ### 2. Configure Access Token
 
-Open `hello_bot.py` with your favourite text editor. If you still do not have one, take a quick look at [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/) or (in case you are a very brave developer) [Vim](https://www.vim.org).
+Open `task1.py` with your favourite text editor. If you still do not have one, take a quick look at [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/) or (in case you are a very brave developer) [Vim](https://www.vim.org).
 
 Replace `<my-bot-access-token>` on Line 8 with the Access Token you saved during the **Create a Bot** step.
 
