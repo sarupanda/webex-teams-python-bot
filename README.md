@@ -4,7 +4,7 @@ A Cisco Webex Teams bot is an automated user within the Webex Teams platform tha
 
 # Task 1 - Set up and run hello bot
 
-This first task will get you all the set up for running a very basic hello bot that replies with a basic message. 
+This first task will get you all the set up for running a very basic hello bot that replies with a basic message.
 
 ### Create a Webex account
 
@@ -58,10 +58,10 @@ pip3 install flask requests ./webexteamssdk
 
 ### 1. Run Ngrok
 
-Unzip the ngrok file that you downloaded above and copy the executable file to the `webex-teams-python-bot` folder. On a terminal window, go to this directory and run the following command to expose a web server on port 5000 of your local machine to the internet.
+Unzip the ngrok file that you downloaded above and copy the executable file to the `webex-teams-python-bot` folder. On a terminal window, go to this directory and run the following command to expose a web server on port 12000 of your local machine to the internet.
 
 ```sh
-./ngrok http 5000
+./ngrok http 12000
 ```
 
 ### 2. Configure Access Token
@@ -84,7 +84,7 @@ Login to your [Webex Teams](https://teams.webex.com/) account and **Create a Spa
 To start interacting with the bot type `@<bot_name>` along with your message. For example if the bot was called "HelloBot" you would type `@HelloBot hello`
 
 # Task 2 - Getting started with Poll Bot.
-The goal of this task is for you to get the poll bot up and running and make a few test polls with the rest of your team. 
+The goal of this task is for you to get the poll bot up and running and make a few test polls with the rest of your team.
 
 ## 1. - Create new poll bot in your bots
 Follow the steps of the previous task to create a new bot called "Poll Bot". Grab and insert the access token into the string replacing ```<bot-access-token>``` with you token value.

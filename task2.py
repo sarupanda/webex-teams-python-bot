@@ -262,4 +262,4 @@ if __name__ == '__main__':
     teams_api = WebexTeamsAPI(access_token=WEBEX_TEAMS_ACCESS_TOKEN)
     create_webhook(teams_api, 'messages_webhook', '/messages_webhook', 'messages')
     create_webhook(teams_api, 'attachmentActions_webhook', '/attachmentActions_webhook', 'attachmentActions')
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=12000)
