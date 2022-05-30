@@ -3,8 +3,10 @@ from flask import Flask, request
 
 from common.utils import create_webhook
 from webexteamssdk import WebexTeamsAPI, Webhook
+from decouple import config
 
-WEBEX_TEAMS_ACCESS_TOKEN = '<bot-access-token>'
+#WEBEX_TEAMS_ACCESS_TOKEN = '<bot-access-token>'
+WEBEX_TEAMS_ACCESS_TOKEN = config('WEBEX_TEAMS_ACCESS_TOKEN')
 
 teams_api = None
 
