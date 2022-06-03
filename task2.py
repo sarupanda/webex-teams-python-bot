@@ -223,6 +223,7 @@ def start_poll(roomId, sender):
 def end_poll(roomId, sender):
     if all_polls[roomId].author == sender:
         if all_polls[roomId].started:
+            all_polls[roomId].started = False
             teams_api.messages.create(roomId=roomId, text="Card Unsupported", attachments=[generate_results_card(roomId, all_polls[roomId].collate_results())])
         else:
             send_message_in_room(roomId, "Error: poll hasn't been started yet")
