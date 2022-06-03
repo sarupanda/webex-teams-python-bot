@@ -4,7 +4,7 @@ A Cisco Webex Teams bot is an automated user within the Webex Teams platform tha
 
 # Task 1 - Set up and run hello bot
 
-This first task will get you all the set up for running a very basic hello bot that replies with a basic message.
+This first task will get you all set up to run a very simple hello bot that replies with a basic message.
 
 ### Create a Webex account
 
@@ -14,7 +14,7 @@ Go to [Cisco Webex for Developers](https://developer.webex.com/) and click **Sig
 
 Go back to [Cisco Webex for Developers](https://developer.webex.com/) and log in with your account details.
 
-Click **Documentation** on the top bar and select the **Bots** section on the left. On this [Bots Documentation](https://developer.webex.com/docs/bots) webpage you will find an extended explanation on what are Bots and how to create them.
+Click **Documentation** on the top bar and select the **Bots** section on the left. On this [Bots Documentation](https://developer.webex.com/docs/bots) webpage you will find an extended explanation on what Bots are and how to create them.
 
 To proceed, click on the **Create a Bot** button and fill up all the required information to describe your new Bot. Finally, scroll down and click on the **Add Bot** button.
 
@@ -26,7 +26,7 @@ Now that your Bot has been created, save the **Access Token** since you will nee
 
 ### Install Python
 
-"Python is an interpreted, high-level, general-purpose programming language" [Link to install latest python version](https://www.python.org/downloads/).
+"Python is an interpreted, high-level, general-purpose programming language" [Link to install the latest python version](https://www.python.org/downloads/).
 
 ### Download Ngrok
 
@@ -46,7 +46,7 @@ Clone the git repository to your local machine by running the following command 
 git clone https://github.com/sarupanda/webex-teams-python-bot.git --recursive
 ```
 
-To go to the directory you have just cloned simply run `cd webex-teams-python-bot`. Try running `ls` and check that you can see all the files you will need to get your Bot up and running.
+To go to the directory you have just cloned, simply run `cd webex-teams-python-bot`. Try running `ls` and check that you can see all the files you will need to get your Bot up and running.
 
 After installing Python, open terminal and run the following command to install dependencies.
 
@@ -81,24 +81,24 @@ python3 task1.py
 ### 4. Interact with your Bot
 Login to your [Webex Teams](https://teams.webex.com/) account and **Create a Space** by clicking the **+** button. Then, enter your Bot Username (something like **XXXX@webex.bot**) as well as your own email address.
 
-To start interacting with the bot type `@<bot_name>` along with your message. For example if the bot was called "HelloBot" you would type `@HelloBot hello`
+To start interacting with the bot, type `@<bot_name>` along with your message. For example, if the bot was called "HelloBot" you would type `@HelloBot hello`
 
 # Task 2 - Getting started with Poll Bot.
 The goal of this task is for you to get the poll bot up and running and make a few test polls with the rest of your team.
 
-## 1. - Create new poll bot in your bots
-Follow the steps of the previous task to create a new bot called "Poll Bot". Grab and insert the access token into the string replacing ```<bot-access-token>``` with you token value.
+## Create new poll bot in your bots
+Follow the steps of the previous task to create a new bot called "Poll Bot". Grab and insert the access token into the string replacing ```<bot-access-token>``` with your token value.
 
-## 2. - Run the bot
-To run the bot execute in a terminal the command:
+## Run the bot
+To run the bot, execute in a terminal the command:
 
 ```sh
 python3 task2.py
 ```
 
-Make sure that ngrok is also running like in the previous task in a sepperate terminal.
+Make sure that ngrok is also running like in the previous task in a separate terminal.
 
-## 3. - Create some polls
+## Create some polls
 Login to your [Webex Teams](https://teams.webex.com/) account and **Create a Space** by clicking the **+** button. Then, enter your Bot Username (something like **XXXX@webex.bot**) as well as your own email address. The bot has four commands: `create poll`, `add option`, `start poll` and `end poll`. To invoke one of those commands, type `@<bot_name>`, a space, and then the command.
 
 For example, if your bot was named John, to create a poll, you would type `@John create poll` and send that into the space.
