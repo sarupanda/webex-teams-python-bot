@@ -103,9 +103,31 @@ Login to your [Webex Teams](https://teams.webex.com/) account and **Create a Spa
 
 For example, if your bot was named John, to create a poll, you would type `@John create poll` and send that into the space.
 
+# Task 3 - Make improvements to Poll Bot
 
+ For this section, the aim will be to extend the functionality of the poll bot. As you will have seen from experimenting with it in the previous section, it is quite limited in terms of what it can do. You will be adding new features of your own and addressing some issues with the current implementation.
 
-# Task 3 - Adding new features to poll bot
+## Add some new commands
+### 1. Add a `help` command
+
+The first new feature that we will add is a `help` command that gives the user a list of the available commands along with a brief description of what each command does. After all, the bot is pretty useless if people don't know how to interact with it!
+
+ - <b>Exercise:</b> Using the code in `task3.py`, add a new command `help` that posts a help message either directly to the user or in the space. This can be just in plain text.
+    <details>
+
+    <summary><b>Hint</b></summary>
+
+    You may find it helpful to use `send_direct_message()` or `send_message_in_room()` which have already been defined for you.
+
+    </details>
+
+### 2. Add a command that gives the current status of a poll
+
+It would also be nice to be able to check the status of an ongoing poll, so that the author can preview the results before closing the poll.
+
+ - <b>Exercise:</b> Define a new command `status poll` that shows the title and description of the poll, whether the poll has started, and if available, the preliminary results.
+
+    This should also include number of votes for each option, as well as the total number of votes submitted. Consider prompting the user to use the `start poll` command if the poll hasn't been started yet.
 
 
 # Task 4 - Create a new bot of your own
