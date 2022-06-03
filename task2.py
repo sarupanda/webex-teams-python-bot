@@ -144,15 +144,18 @@ def generate_voting_card(roomId):
             "body": [
                 {
                     "type": "TextBlock",
-                    "text": "# Have your say on the poll below!"
+                    "text": "Have your say on the poll below!",
+                    "size": "large"
                 },
                 {
                     "type": "TextBlock",
-                    "text": "## " + all_polls[roomId].name
+                    "text": all_polls[roomId].name,
+                    "size": "medium"
                 },
                 {
                     "type": "TextBlock",
-                    "text": "### " + all_polls[roomId].description
+                    "text": all_polls[roomId].description,
+                    "weight": "bolder"
                 },
                 {
                     "type": "Input.Text",
@@ -181,7 +184,8 @@ def generate_results_card(roomId, results):
             "body": [
                 {
                     "type": "TextBlock",
-                    "text": "# Below are the results!"
+                    "text": "Below are the results!",
+                    "size": "large"
                 },
                 {
                     "type": "Input.Text",
@@ -221,9 +225,9 @@ def end_poll(roomId, sender):
         if all_polls[roomId].started:
             teams_api.messages.create(roomId=roomId, text="Card Unsupported", attachments=[generate_results_card(roomId, all_polls[roomId].collate_results())])
         else:
-            send_message_in_room(roomId, "Poll hasn't been started yet")
+            send_message_in_room(roomId, "Error: poll hasn't been started yet")
     else:
-        send_message_in_room(roomId, "Only the poll's author can end the poll")
+        send_message_in_room(roomId, "Error: only the poll's author can end the poll")
 
 @app.route('/attachmentActions_webhook', methods=['POST'])
 def attachmentActions_webhook():
